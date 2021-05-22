@@ -359,9 +359,9 @@ bot.on("message", async message => {
             .addField('Mesaj de bun venit', welcome_message_enabled, true)
             .addField("Whitelisted", require('./config.json').whitelisted.join(", "), true)
             .addField("Blacklisted", blacklistedUser.join(" , "), true)
-            .addField("Report System", report_system_toggle, true)
-            .addField("Suggest System", suggest_system_toggle, true)
-            .addField("Ignore channels", ignore_channel_toggle, true)
+            .addField("Report Sistem", report_system_toggle, true)
+            .addField("Sugest Sistem", suggest_system_toggle, true)
+            .addField("Canale Ignorate", ignore_channel_toggle, true)
             .addField("Status Type", status_type, true)
             .addField("Community Counter", require('./config.json').counter, true)
             .addField("Bot Prefix", prefix, true)
@@ -734,7 +734,7 @@ bot.on("message", async message => {
 
             for (const invite in inviteCount) {
                 const count = inviteCount[invite]
-                replText += `\n${invite} a fost invitat ${count} member(s)`
+                replText += `\n${invite} a invitat ${count} membrii`
             }
             try {
                 let e = new MessageEmbed()
@@ -1377,7 +1377,7 @@ bot.on("message", async message => {
             member.kick(member, `Autorizat de ${message.author.tag}`).then(() => {
                 const kickedEmbec = new MessageEmbed()
                     .setColor(color)
-                    .setDescription(`${member.user.username} a primit kick.`)
+                    .setDescription(`${member.user.username} a primit kick de pe server.`)
                 message.channel.send(kickedEmbec)
             })
         } else return message.channel.send(noPerms)
@@ -1398,7 +1398,7 @@ bot.on("message", async message => {
             }).then(() => {
                 const kickedEmbec = new MessageEmbed()
                     .setColor(color)
-                    .setDescription(`${member.user.username} a fost banat.`)
+                    .setDescription(`${member.user.username} a fost banat de pe server.`)
                 message.channel.send(kickedEmbec)
             })
         } else {
