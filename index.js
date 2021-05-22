@@ -54,7 +54,7 @@ bot.on("guildMemberAdd", (member) => {
         console.log("Membru alaturat!")
         if (member.guild.id !== welcome_message_server) return;
         bot.mcount++
-        console.log(`Nou membru alatura! Acum avem ${bot.mcount} alaturati!`);
+        console.log(`Nou membru alaturat! Acum avem ${bot.mcount} alaturati!`);
         bot.guilds.cache.get(welcome_message_server).channels.cache.get(welcome_message_channel).send(`Bun venit **<@${member.id}>** lui **${member.guild.name}**`)
     } else { }
 })

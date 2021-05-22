@@ -1,7 +1,7 @@
 {
     "token": "Token-ul Botului tau de discord",
     "prefix": "-",
-    "bot_name": "Numele botului tau",
+    "bot_name": "Numele botului",
     "main_color": "0x2c95e6",
     "bot_owners": ["ID 1","ID 2", "ID 3" ],
 
@@ -9,17 +9,17 @@
     "anti_bad_words": [  "mm",  "fmm",  "pula",  "pizda", "prostule", "proasta", "proasto", "Poti adauga in continuare"],
 
     "counter": false,
-    "counter_channel": "802635210919116881",
+    "counter_channel": "ID-ul canalului unde va numara",
     "counter_number_reach": 5,
     
     "blacklisted": ["ID 1","ID 2","ID 3"],
     "whitelisted": ["ID 1","ID 2","ID 3"],
     
     "ignore_channel_toggle": true,
-    "ignore_channel_id": ["798174351865806918","CHANNEL 2 ID"],
+    "ignore_channel_id": ["ID-ul canalului care va fi ignorat de automod","CANAL 2 ID"],
     
     "anti_link_toggle": true,
-    "mute_role": "797753839548760085",
+    "mute_role": "ID-ul rolului de mute",
 
     "command_cooldown_toggle": true,
     "command_cooldown_time": "3",
@@ -29,7 +29,7 @@
     "xp_system_levelrate": 300,
     
     "suggest_system_toggle": true,
-    "suggest_system_channel": "",
+    "suggest_system_channel": "ID-ul canalului unde vor ajunge sugestiile",
     
     "report_system_toggle": true,
     "report_system_channel": "ID-ul canalului in care vor ajunge reporturile",
@@ -43,7 +43,7 @@
     
     "status_type": "STREAMING",
     "status_url": "https://www.twitch.tv/#",
-    "bot_status": ["Modificat de RagnarLothbrok ","Tradus de RagnarLothbrok"],
+    "bot_status": ["Made by RagnarLothbrok ","https://discord.io/RAGNARR"],
     "status_change_interval": "2",
     
     "welcome_message_enabled": false,
