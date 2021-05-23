@@ -812,10 +812,10 @@ bot.on("message", async message => {
         let embed = new MessageEmbed()
             .setColor(color)
             .setDescription(`**${bot_name} Bot Statistici** \n \n Statisticile botului`)
-            .addField("Informatii Bot", `-\`guilds:\` ${bot.guilds.cache.size} \n -\`Developer:\` RagnarLothbrok#8342 \n -\`Manageri:\` RagnarLothbrok#8342`)
-            .addField("Alte informatii", `-\`Latență:\` ${bot.ws.ping}ms \n -\`Prefix:\` ${require('./config.json').prefix}\n -\`Libary:\` discord.js  \n -\`Versiunea:\` ${Discord.version} `)
-            .addField("Bot Guild Info", `-\`canale\` ${bot.channels.cache.size} \n -\`Emojis\` ${bot.emojis.cache.size} \n -\`Shards\` ${bot.options.shardCount}`)
-            .addField("Procces Usage", `-\`Memory Usage\` ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB \n -\`Cpu Usage\` ${(process.cpuUsage().system).toFixed(1)}% \n -\`Recourse Usage\` ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2) + (process.cpuUsage().system).toFixed(1)}`)
+            .addField("🤖 Informatii Bot", `-\`🖥 guilds:\` ${bot.guilds.cache.size} \n -\`💎 Developer:\` RagnarLothbrok#8342 \n -\`💎 Manageri:\` RagnarLothbrok#8342`)
+            .addField("📑 Alte informatii", `-\`📍 Latență:\` ${bot.ws.ping}ms \n -\`📌 Prefix:\` ${require('./config.json').prefix}\n -\`📚 Libary:\` discord.js  \n -\`📈 Versiunea:\` ${Discord.version} `)
+            .addField("🤖 Bot Guild Info", `-\`📑 canale\` ${bot.channels.cache.size} \n -\`🙂 Emojis\` ${bot.emojis.cache.size} \n -\`Shards\` ${bot.options.shardCount}`)
+            .addField("💾 Procces Usage", `-\`💾 Memory Usage\` ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} 💾 MB \n -\`🖥 Cpu Usage\` ${(process.cpuUsage().system).toFixed(1)}% \n -\` 🖥 Recourse Usage\` ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2) + (process.cpuUsage().system).toFixed(1)}`)
         message.channel.send(embed);
     }
 
@@ -1026,16 +1026,16 @@ bot.on("message", async message => {
         const data = await api.all()
         const coronaEmbed = new MessageEmbed()
             .setColor(color)
-            .addField("Cazuri", data.cases)
-            .addField("Morti", data.deaths)
-            .addField("Recuperati", data.recovered)
-            .addField("Activi", data.active)
-            .addField("Cazuri astazi", data.todayCases)
-            .addField("Criticali", data.critical)
-            .addField("Teste", data.tests)
-            .addField("Morti astazi", data.todayDeaths)
-            .addField("Cazuri per Milion", data.casesPerOneMillion)
-            .addField("Tari afectate", data.affectedCountries)
+            .addField("📑-Cazuri", data.cases)
+            .addField("☣️-Morti", data.deaths)
+            .addField("🩺-Recuperati", data.recovered)
+            .addField("💊-Activi", data.active)
+            .addField("💉-Cazuri astazi", data.todayCases)
+            .addField("🧬-Criticali", data.critical)
+            .addField("🔬-Teste", data.tests)
+            .addField("🦠-Morti astazi", data.todayDeaths)
+            .addField("📊-Cazuri per Milion", data.casesPerOneMillion)
+            .addField("🚩-Tari afectate", data.affectedCountries)
 
         message.channel.send(coronaEmbed);
     }
@@ -1219,26 +1219,26 @@ bot.on("message", async message => {
         let mes = await message.channel.send(`Hacking ${user.username}..`).then((msg) => {
 
             setTimeout(() => {
-                msg.edit("[▖] Finding discord login... (2fa bypassed)")
+                msg.edit("[▖] Caut autentificarea contului... (2fa bypassed)")
             }, 2 * 1000)
 
             setTimeout(() => {
-                msg.edit(`[▗] **Email:** \`${hackEmails[Math.floor(Math.random() * hackEmails.length)]}\` \n **Password:** \`${hackPasswords[Math.floor(Math.random() * hackPasswords.length)]}\` `)
+                msg.edit(`[▗] **Email:** \`${hackEmails[Math.floor(Math.random() * hackEmails.length)]}\` \n **Parola:** \`${hackPasswords[Math.floor(Math.random() * hackPasswords.length)]}\` `)
             }, 4 * 1000)
 
             setTimeout(() => {
                 msg.edit("**[▝] Fetching dms with closest friends (if there are any friends at all)**")
             }, 6 * 1000)
             setTimeout(() => {
-                msg.edit(`**[▝] Last DM:** ${lastMessage[Math.floor(Math.random() * lastMessage.length)]}`)
+                msg.edit(`**[▝] Utimul mesaj:** ${lastMessage[Math.floor(Math.random() * lastMessage.length)]}`)
             }, 8 * 1000)
 
             setTimeout(() => {
-                msg.edit("[▖] Finding most common word...")
+                msg.edit("[▖] Caut un cuvant comun...")
             }, 10 * 1000)
 
             setTimeout(() => {
-                msg.edit(`[▗] **Most common word:** ${mostCommonWord[Math.floor(Math.random() * mostCommonWord.length)]}`)
+                msg.edit(`[▗] **Cel mai comun cuvant:** ${mostCommonWord[Math.floor(Math.random() * mostCommonWord.length)]}`)
             }, 12 * 1000)
 
             setTimeout(() => {

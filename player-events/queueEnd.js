@@ -2,7 +2,7 @@ module.exports = (bot, message, queue) => {
     const {MessageEmbed} = require('discord.js')
     const embed = new MessageEmbed()
     .setColor(bot.color)
-    .setDescription(` Music stopped as there is no more music in the queue !`)
+    .setDescription(` Muzica sa oprit deoarece nu mai există muzică în coadă !`)
     message.channel.send(embed);
 
 };

@@ -1,6 +1,6 @@
 {
     "token": "Token-ul Botului tau de discord",
-    "prefix": "-",
+    "prefix": "<",
     "bot_name": "Numele botului",
     "main_color": "0x2c95e6",
     "bot_owners": ["ID 1","ID 2", "ID 3" ],
