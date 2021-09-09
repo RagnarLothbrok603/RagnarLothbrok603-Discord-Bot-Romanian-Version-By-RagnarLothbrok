@@ -17,3 +17,4 @@ etc.
 6. Odata terminat de completat setarile de configuratie tot ce trebuie sa faci este sa pornesti Botul deschizand fisierul host.bat.
 Daca aveti nelamuriri va astept pe serverul de discord: [https://discord.gg/ymnQXzyBw8] sau [RagnarLothbrok#4435]
 Pentru mai multe detalii o sa las video cu tutorialul aici:
+Update 09.09.2021:
