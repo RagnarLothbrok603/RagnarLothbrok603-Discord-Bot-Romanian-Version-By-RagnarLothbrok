@@ -15,5 +15,5 @@ Instalare:
 # -Canalul cu sugestii
 etc.
 6. Odata terminat de completat setarile de configuratie tot ce trebuie sa faci este sa pornesti Botul deschizand fisierul host.bat.
-Daca aveti nelamuriri va astept pe serverul de discord: [https://discord.gg/wYvM5Y5AAz] sau [RagnarLothbrok#4435]
+Daca aveti nelamuriri va astept pe serverul de discord: [https://discord.gg/ymnQXzyBw8] sau [RagnarLothbrok#4435]
 Pentru mai multe detalii o sa las video cu tutorialul aici:
