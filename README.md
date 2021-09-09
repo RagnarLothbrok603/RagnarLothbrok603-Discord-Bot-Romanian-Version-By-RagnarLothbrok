@@ -18,4 +18,5 @@ etc.
 Daca aveti nelamuriri va astept pe serverul de discord: [https://discord.gg/ymnQXzyBw8] sau [RagnarLothbrok#4435]
 Pentru mai multe detalii o sa las video cu tutorialul aici:
 Update 09.09.2021:
-1.
+1.Adaugate custom emoji in comanda ```help``` !
+2. Adaugate emoji in unele comenzi !

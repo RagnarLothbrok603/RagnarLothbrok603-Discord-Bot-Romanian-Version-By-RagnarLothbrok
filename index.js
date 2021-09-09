@@ -25,6 +25,7 @@ const cooldown = new Set();
 
 bot.on("ready", () => {
     console.log(`Pregatit ${bot.user.username}`)
+
     function pickStatus() {
         const status = bot_status
         let Status = Math.floor(Math.random() * status.length);
@@ -54,9 +55,9 @@ bot.on("guildMemberAdd", (member) => {
         console.log("Membru alaturat!")
         if (member.guild.id !== welcome_message_server) return;
         bot.mcount++
-        console.log(`Nou membru alaturat! Acum avem ${bot.mcount} alaturati!`);
+            console.log(`Nou membru alaturat! Acum avem ${bot.mcount} alaturati!`);
         bot.guilds.cache.get(welcome_message_server).channels.cache.get(welcome_message_channel).send(`Bun venit **<@${member.id}>** lui **${member.guild.name}**`)
-    } else { }
+    } else {}
 })
 
 
@@ -95,7 +96,7 @@ bot.on("message", message => {
                     const curseEmbed = new MessageEmbed()
                         .setColor()
                         .setDescription(`Ai găsit un blestem! \n \n Inlatural ${curse} \n Începeți să numărați de la ${count - curse}`)
-                    // message.channel.send(`U found a curse! \n \n Taking away ${curse} \n Start counting from ${count - curse}`);
+                        // message.channel.send(`U found a curse! \n \n Taking away ${curse} \n Start counting from ${count - curse}`);
                     count -= curse
                     message.channel.send(curseEmbed)
                 }
@@ -103,8 +104,8 @@ bot.on("message", message => {
             } else {
                 message.delete();
             }
-        } else { }
-    } else { }
+        } else {}
+    } else {}
 
 })
 
@@ -140,7 +141,7 @@ bot.on("message", message => {
         } else {
             console.log("Buy command")
         }
-    } else { }
+    } else {}
 })
 
 
@@ -153,7 +154,7 @@ bot.on("message", async message => {
                     message.member.setNickname(`${message.member.user.username.substring("[AFK]")}`)
                 }
             }
-        } catch (e) { }
+        } catch (e) {}
         message.channel.send(`Bine ai revenit <@${message.member.id}>! te-am scos de pe AFK`)
     }
     if (message.mentions.users.first()) {
@@ -172,7 +173,7 @@ bot.on("message", async message => {
         if (badwordIs) {
             message.delete()
             return message.reply("Ai grija la limbaj!");
-        } else { }
+        } else {}
     }
     const whitelistee = require('./config.json').whitelisted
     let wlisted = false
@@ -198,7 +199,7 @@ bot.on("message", async message => {
             message.delete().then(() => {
                 message.reply("Fără publicitate personală!");
             })
-        } else { }
+        } else {}
     }
     if (content.includes('https')) {
         if (wlisted === true) return;
@@ -206,7 +207,7 @@ bot.on("message", async message => {
             message.delete().then(() => {
                 message.reply("Fără publicitate personală!");
             })
-        } else { }
+        } else {}
     }
     if (content.includes('.com')) {
         if (wlisted === true) return;
@@ -214,7 +215,7 @@ bot.on("message", async message => {
             message.delete().then(() => {
                 message.reply("Fără publicitate personală!");
             })
-        } else { }
+        } else {}
     }
 
     const meEmbed = new MessageEmbed()
@@ -288,7 +289,7 @@ bot.on("message", async message => {
                 cooldown.delete(message.author.id)
             }, command_cooldown_time * 1000)
         }
-    } else { }
+    } else {}
 
     if (ignore_channel_toggle === true) {
         if (ignore_channel_id.includes(message.channel.id)) {
@@ -302,13 +303,13 @@ bot.on("message", async message => {
             .setColor(color)
             .setTitle("Meniu de ajutor")
             .setDescription(`Meniu de ajutor pentru ${bot_name}`)
-            .addField("🛠 Moderare - (14)", "`kick` `ban` `mute` `unmute` `hackban` `unban` `nuke` `clean` `purge` `softban` `warn` `delwarn` `warnings` `clearwarns`")
-            .addField("😂 Fun - (12)", "`hack` `say` `gay` `token` `calc` `covid` `meme` `dog` `cat` `ascii` `docs` `roast`")
-            .addField("🔰 Management - (9)", "`invites` `announce` `slowmode` `lock` `modlogs` `unlock` `dm` `owners` `eval`")
-            .addField("🎶 Music - (7)", "`play`, `join` `leave` `stop` `pause` `loop` `np`")
-            .addField('📑 Informatii - (4)', "`stats` `membercount` `uptime` `config`")
-            .addField("💎 Diverse (9)", "`snipe` `embed` `ping` `whois` `av` `suggest` `report` `id` `afk`")
-            .addField("XP", "`level`")
+            .addField("<:ragnaradmin:883680900276187136> Moderare - (14)", "`kick` `ban` `mute` `unmute` `hackban` `unban` `nuke` `clean` `purge` `softban` `warn` `delwarn` `warnings` `clearwarns`")
+            .addField("<:ragnarhahaha:883666043304804373> Fun - (12)", "`hack` `say` `gay` `token` `calc` `covid` `meme` `dog` `cat` `ascii` `docs` `roast`")
+            .addField("<:ragnarmod:883682159192309780> Management - (9)", "`invites` `announce` `slowmode` `lock` `modlogs` `unlock` `dm` `owners` `eval`")
+            .addField("<:ragnarmusic:883676676276514876> Music - (7)", "`play`, `join` `leave` `stop` `pause` `loop` `np`")
+            .addField('<:ragnarstats:883685078570500136> Informatii - (4)', "`stats` `membercount` `uptime` `config`")
+            .addField("<:ragnarcustom:883681409208836137> Diverse (9)", "`snipe` `embed` `ping` `whois` `av` `suggest` `report` `id` `afk`")
+            .addField("<:ragnarrank:885608021814837288> XP", "`level`")
 
         message.channel.send(helpEmbed)
     }
@@ -320,8 +321,8 @@ bot.on("message", async message => {
             if (!user) return message.channel.send(noMember);
 
             const noWarns = new MessageEmbed()
-            .setColor(color)
-            .setDescription("Aceasta persoana nu are nici un warning")
+                .setColor(color)
+                .setDescription("Aceasta persoana nu are nici un warning")
 
             if (!warns[user.id]) {
                 return message.channel.send(noWarns);
@@ -330,16 +331,16 @@ bot.on("message", async message => {
             let warnss = warns[user.id].warns
 
             const clearedEmbed = new MessageEmbed()
-            .setColor(color)
-            .setDescription(`Am sters \`${warnss}\` warninguri de la acea persoana.`)
+                .setColor(color)
+                .setDescription(`<:ragnarcheck:883688315516244069> Am sters \`${warnss}\` warninguri de la acea persoana.`)
 
             message.channel.send(clearedEmbed)
 
             warns[user.id].warns -= warnss;
 
-            fs.writeFile('./database/warns.json', JSON.stringify(warns), (err) => { if (err) console.log(err)})
+            fs.writeFile('./database/warns.json', JSON.stringify(warns), (err) => { if (err) console.log(err) })
 
-            
+
 
         } else return message.channel.send(noPerms)
     }
@@ -368,7 +369,7 @@ bot.on("message", async message => {
             .addField("Bot owners", owners.join(", "), true)
             .addField('Mute role', `<@&${require('./config.json').mute_role}>`, true)
 
-            message.channel.send(configEmbed)
+        message.channel.send(configEmbed)
     }
 
     if (command === 'eval') {
@@ -394,7 +395,7 @@ bot.on("message", async message => {
         message.reply("Te-am setat ca si AFK.").then(() => {
             if (message.member.manageable) {
                 message.guild.members.cache.find(mm => mm.id === message.member.id).setNickname(`[AFK]${message.member.user.username}`);
-            } else { }
+            } else {}
         })
     }
 
@@ -493,9 +494,9 @@ bot.on("message", async message => {
 
             warns[user.id].warns--
 
-            const delWarned = new MessageEmbed()
-                .setColor(color)
-                .setDescription(`Am sters \`1\` warninguri de la <@${user.id}>`)
+                const delWarned = new MessageEmbed()
+                    .setColor(color)
+                    .setDescription(`Am sters \`1\` warninguri de la <@${user.id}>`)
 
             message.channel.send(delWarned)
 
@@ -526,9 +527,9 @@ bot.on("message", async message => {
 
 
 
-            const warnedEmbed = new MessageEmbed()
-                .setColor(color)
-                .setDescription(`_<@${user.id}> a fost avertizat_ | ${reason}`)
+                const warnedEmbed = new MessageEmbed()
+                    .setColor(color)
+                    .setDescription(`<:ragnarcheck:883688315516244069> _<@${user.id}> a fost avertizat_ | ${reason}`)
 
             message.channel.send(warnedEmbed)
             fs.writeFile('./database/warns.json', JSON.stringify(warns), (err) => {
@@ -540,9 +541,9 @@ bot.on("message", async message => {
                 }
             }
             userlogs[user.id].logs++
-            fs.writeFile('./database/user-logs.json', JSON.stringify(userlogs), (err) => {
-                if (err) console.log(err)
-            })
+                fs.writeFile('./database/user-logs.json', JSON.stringify(userlogs), (err) => {
+                    if (err) console.log(err)
+                })
         } else {
             return message.channel.send(noPerms)
         }
@@ -553,19 +554,19 @@ bot.on("message", async message => {
             const user = message.mentions.users.first();
             if (!user) return message.channel.send(noMember)
 
-            
+
             try {
                 const modlogsEmbed = new MessageEmbed()
-                .setColor(color)
-                .setDescription(`<@${user.id}> has ${userlogs[user.id].logs || "None"} total modlogs cases.`)
+                    .setColor(color)
+                    .setDescription(`<@${user.id}> has ${userlogs[user.id].logs || "None"} total modlogs cases.`)
 
-            message.channel.send(modlogsEmbed);
+                message.channel.send(modlogsEmbed);
             } catch (e) {
                 const modlogsEmbed = new MessageEmbed()
-                .setColor(color)
-                .setDescription(`<@${user.id}> has 0 total modlogs cases.`)
+                    .setColor(color)
+                    .setDescription(`<@${user.id}> has 0 total modlogs cases.`)
 
-            message.channel.send(modlogsEmbed);
+                message.channel.send(modlogsEmbed);
             }
         } else {
             return message.channel.send(noPerms)
@@ -621,7 +622,7 @@ bot.on("message", async message => {
 
             const reportRecived = new MessageEmbed()
                 .setColor(color)
-                .setDescription("Report primit! Te rog sa astepti pana cand vom verifica.")
+                .setDescription("<:ragnarcheck:883688315516244069> Report primit! Te rog sa astepti pana cand vom verifica.")
 
             message.channel.send(reportRecived);
 
@@ -648,7 +649,7 @@ bot.on("message", async message => {
 
             const suggestionSent = new MessageEmbed()
                 .setColor(color)
-                .setDescription("Sugestia ta a fost trimisa cu succes.")
+                .setDescription("<:ragnarcheck:883688315516244069> Sugestia ta a fost trimisa cu succes.")
 
             message.channel.send(suggestionSent)
 
@@ -909,7 +910,7 @@ bot.on("message", async message => {
 
         let msg = args.join(" ");
 
-        figlet.text(msg, function (err, data) {
+        figlet.text(msg, function(err, data) {
             if (err) {
                 console.log('Ceva nu a functionat!');
                 console.dir(err);
@@ -927,13 +928,13 @@ bot.on("message", async message => {
 
         let { body } = await superagent
             .get('https://aws.random.cat/meow')
-        //console.log(body.file)
+            //console.log(body.file)
         if (!{ body }) return message.channel.send('Nu pot! Te rog incearca din nou.')
 
         const catEmbed = new MessageEmbed()
 
 
-            .setAuthor('cat!', message.author.displayAvatarURL())
+        .setAuthor('cat!', message.author.displayAvatarURL())
             .setColor(color)
             .setImage(body.file)
             .setTimestamp()
@@ -948,19 +949,19 @@ bot.on("message", async message => {
 
         let { body } = await superagent
             .get('https://dog.ceo/api/breeds/image/random')
-        //console.log(body.file)
+            //console.log(body.file)
         if (!{ body }) return message.channel.send('Nu pot! Te rog incearca din nou.')
 
         const dogEmbed = new MessageEmbed()
 
 
-            .setAuthor('dog!', message.author.displayAvatarURL())
+        .setAuthor('dog!', message.author.displayAvatarURL())
             .setColor(color)
             .setImage(body.message)
             .setTimestamp()
 
 
-        message.channel.send(dogEmbed)//.then(msg => msg.delete({timeout: "10000"}));
+        message.channel.send(dogEmbed) //.then(msg => msg.delete({timeout: "10000"}));
 
         msg.delete();
     }
@@ -1356,7 +1357,7 @@ bot.on("message", async message => {
             .addField("Regiunea", message.guild.region, true)
             .addField("Canale de text", message.guild.channels.cache.size, true)
             .addField("Membrii", message.guild.memberCount, true)
-            .addField("**Lista de roluri**", message.guild.roles.cache.size, true)//a70f3e9169546b2c67d301aaeef38.gif
+            .addField("**Lista de roluri**", message.guild.roles.cache.size, true) //a70f3e9169546b2c67d301aaeef38.gif
             .setThumbnail(message.guild.iconURL())
             .setFooter(`${message.author.username}`, message.author.displayAvatarURL())
 
@@ -1441,9 +1442,9 @@ bot.on("message", async message => {
 
             userlogs[wUser.id].logs++
 
-            fs.writeFile('./database/user-logs.json', JSON.stringify(userlogs), (err) => {
-                if (err) console.log(err);
-            })
+                fs.writeFile('./database/user-logs.json', JSON.stringify(userlogs), (err) => {
+                    if (err) console.log(err);
+                })
 
 
             setTimeout(() => {
@@ -1479,43 +1480,35 @@ bot.on("message", async message => {
                 .setColor(color)
                 .setAuthor(wuser.username, wuser.displayAvatarURL())
                 .setTitle(`Informatii despre ${wuser.username}`)
-                .addFields(
-                    {
-                        name: "Tagul persoanei",
-                        value: mUser.user.tag,
-                        inline: true
-                    },
-                    {
-                        name: 'Este bot',
-                        value: mUser.user.bot,
-                        inline: true
-                    },
-                    {
-                        name: 'Nickname',
-                        value: mUser.nickname || 'None',
-                        inline: true
-                    },
-                    {
-                        name: 'S-a alaturat pe server',
-                        value: new Date(mUser.joinedTimestamp).toLocaleDateString(),
-                        inline: true
-                    },
-                    {
-                        name: 'S-a alaturat pe Discord',
-                        value: new Date(wuser.createdTimestamp).toLocaleDateString(),
-                        inline: true
-                    },
-                    {
-                        name: 'Numar de roluri',
-                        value: mUser.roles.cache.size - 1,
-                        inline: true
-                    },
-                    {
-                        name: "Roluri",
-                        value: mUser.roles.cache.map(role => `<@&${role.id}>`),
-                        inline: true
-                    },
-                )
+                .addFields({
+                    name: "Tagul persoanei",
+                    value: mUser.user.tag,
+                    inline: true
+                }, {
+                    name: 'Este bot',
+                    value: mUser.user.bot,
+                    inline: true
+                }, {
+                    name: 'Nickname',
+                    value: mUser.nickname || 'None',
+                    inline: true
+                }, {
+                    name: 'S-a alaturat pe server',
+                    value: new Date(mUser.joinedTimestamp).toLocaleDateString(),
+                    inline: true
+                }, {
+                    name: 'S-a alaturat pe Discord',
+                    value: new Date(wuser.createdTimestamp).toLocaleDateString(),
+                    inline: true
+                }, {
+                    name: 'Numar de roluri',
+                    value: mUser.roles.cache.size - 1,
+                    inline: true
+                }, {
+                    name: "Roluri",
+                    value: mUser.roles.cache.map(role => `<@&${role.id}>`),
+                    inline: true
+                }, )
             message.channel.send(embed)
         } else {
 
@@ -1525,44 +1518,36 @@ bot.on("message", async message => {
                 .setAuthor(message.author.tag, message.author.displayAvatarURL())
                 .setTitle(`User info for ${message.author.username}`)
                 .setThumbnail(message.author.displayAvatarURL())
-                .addFields(
-                    {
-                        name: 'Tagul persoanei',
-                        value: message.author.tag,
-                        inline: true
-                    },
-                    {
-                        name: 'Este bot',
-                        value: message.author.bot,
-                        inline: true
-                    },
-                    {
-                        name: "Nickname",
-                        value: message.member.nickname || 'None',
-                        inline: true
-                    },
-                    {
-                        name: 'S-a alaturat serverului',
-                        value: new Date(message.member.joinedTimestamp).toLocaleDateString(),
-                        inline: true
-                    },
-                    {
-                        name: "S-a alaturat pe discord",
-                        value: new Date(message.author.createdTimestamp).toLocaleDateString(),
-                        inline: true
-                    },
-                    {
-                        name: "Numar de roluri",
-                        value: message.member.roles.cache.size - 1,
-                        inline: true
-                    },
-                    {
-                        name: "Roluri",
-                        value: message.member.roles.cache.map(role => `<@&${role.id}>`),
-                        inline: true
-                    },
-                )
-            //    }
+                .addFields({
+                    name: 'Tagul persoanei',
+                    value: message.author.tag,
+                    inline: true
+                }, {
+                    name: 'Este bot',
+                    value: message.author.bot,
+                    inline: true
+                }, {
+                    name: "Nickname",
+                    value: message.member.nickname || 'None',
+                    inline: true
+                }, {
+                    name: 'S-a alaturat serverului',
+                    value: new Date(message.member.joinedTimestamp).toLocaleDateString(),
+                    inline: true
+                }, {
+                    name: "S-a alaturat pe discord",
+                    value: new Date(message.author.createdTimestamp).toLocaleDateString(),
+                    inline: true
+                }, {
+                    name: "Numar de roluri",
+                    value: message.member.roles.cache.size - 1,
+                    inline: true
+                }, {
+                    name: "Roluri",
+                    value: message.member.roles.cache.map(role => `<@&${role.id}>`),
+                    inline: true
+                }, )
+                //    }
             message.channel.send(e)
         }
     }
@@ -1660,7 +1645,7 @@ bot.on("channelCreate", (guildchannel, dmchannel) => {
         .setDescription(`_Un canal a fost creat_ \n \n **Canal:** <#${guildchannel.id}> \n **Canal ID:** ${guildchannel.id}\n **Tip Canal:** ${guildchannel.type}`)
     if (mod_logs_toggle === true) {
         bot.channels.cache.get(mod_logs_channel).send(channelCreated);
-    } else { }
+    } else {}
 })
 
 bot.on("messageUpdate", (oldMessage, newMessage) => {
@@ -1673,7 +1658,7 @@ bot.on("messageUpdate", (oldMessage, newMessage) => {
 
         bot.channels.cache.get(mod_logs_channel).send(messageEditedEmbed)
 
-    } else { }
+    } else {}
 })
 
 bot.on("messageDelete", (message) => {
@@ -1685,7 +1670,7 @@ bot.on("messageDelete", (message) => {
             .setDescription(`Mesaj sters in **<#${message.channel.id}>** \n \`${message.content}\``)
             .setTimestamp()
         bot.channels.cache.get(mod_logs_channel).send(messageDeletedEmebd)
-    } else { }
+    } else {}
     bot.snipes = new Map();
     bot.snipes.set(message.channel.id, {
         content: message.content,
