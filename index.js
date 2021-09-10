@@ -24,7 +24,7 @@ const cooldown = new Set();
 
 
 bot.on("ready", () => {
-    console.log(`Pregatit ${bot.user.username}`)
+    console.log(`Sunt Online ! ${bot.user.username}`)
 
     function pickStatus() {
         const status = bot_status
@@ -45,17 +45,17 @@ fs.readdir('./player-events/', (err, files) => {
     files.forEach(file => {
         const event = require(`./player-events/${file}`);
         let eventName = file.split(".")[0];
-        console.log(`Se incarca fisierele ${eventName}`);
+        console.log(`Incarc fisierele ${eventName}`);
         bot.player.on(eventName, event.bind(null, bot));
     });
 });
 bot.mcount = 0
 bot.on("guildMemberAdd", (member) => {
     if (welcome_message_enabled === true) {
-        console.log("Membru alaturat!")
+        console.log("Un nou membru s-a alaturat!")
         if (member.guild.id !== welcome_message_server) return;
         bot.mcount++
-            console.log(`Nou membru alaturat! Acum avem ${bot.mcount} alaturati!`);
+            console.log(`Un nou membru s-a alaturat! Acum avem ${bot.mcount} alaturati!`);
         bot.guilds.cache.get(welcome_message_server).channels.cache.get(welcome_message_channel).send(`Bun venit **<@${member.id}>** lui **${member.guild.name}**`)
     } else {}
 })
@@ -74,7 +74,7 @@ bot.on("message", message => {
                     const doneEmbed = new MessageEmbed()
                         .setColor(color)
                         .setDescription(`Felicitari! Numaratoare de \`${counter_number_reach}\` a fost atinsa!`)
-                        .setFooter("Nu voi mai numara..")
+                        .setFooter("<:ragnarcheck:883688315516244069> Nu voi mai numara...")
 
                     message.channel.send(doneEmbed)
                 }
@@ -155,7 +155,7 @@ bot.on("message", async message => {
                 }
             }
         } catch (e) {}
-        message.channel.send(`Bine ai revenit <@${message.member.id}>! te-am scos de pe AFK`)
+        message.channel.send(`<:ragnarcheck:883688315516244069> Bine ai revenit <@${message.member.id}>! te-am scos de pe AFK`)
     }
     if (message.mentions.users.first()) {
         if (bot.afk.has(message.mentions.users.first().id)) {
